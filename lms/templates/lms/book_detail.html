@@ -1,0 +1,150 @@
+{% extends "lms/base.html" %}
+{% block content %}
+
+<div class="card mt-4 detail-view-header">
+	<h3 class="text-center mt-2 font-weight-bold" style="font-family: monospace; font-size: 25px;">
+		Details about {{ object.book_name }}
+	</h3>
+</div>
+
+<div class="container text-center mt-5">
+
+	<div class="card detail-view-fields">
+		<div class="row">
+			<div class="col-sm">
+				<h5 class="mt-2 text-light">Book Name<h5>
+			</div>
+			<div class="col-sm">
+				<h5 class="mt-2 text-light">{{ object.book_name }}</h5>
+			</div>
+		</div>
+	</div>
+
+	<div class="card detail-view-fields">
+		<div class="row">
+			<div class="col-sm">
+				<h5 class="mt-2 text-light">Author Name</h5>
+			</div>
+			<div class="col-sm">
+				<h5 class="mt-2 text-light">{{ object.author_name }}</h5>
+			</div>
+		</div>
+	</div>
+
+	<div class="card detail-view-fields">
+		<div class="row">
+			<div class="col-sm">
+				<h5 class="mt-2 text-light">Book Publisher</h5>
+			</div>
+			<div class="col-sm">
+				<h5 class="mt-2 text-light">{{ object.book_publisher }}</h5>
+			</div>
+		</div>
+	</div>
+
+	<div class="card detail-view-fields">
+		<div class="row">
+			<div class="col-sm">
+				<h5 class="mt-2 text-light">Genre</h5>
+			</div>
+			<div class="col-sm">
+				<h5 class="mt-2 text-light">{{ object.genre }}</h5>
+			</div>
+		</div>
+	</div>
+
+	<div class="card detail-view-fields">
+		<div class="row">
+			<div class="col-sm">
+				<h5 class="mt-2 text-light">Book Edition</h5>
+			</div>
+			<div class="col-sm">
+				<h5 class="mt-2 text-light">{{ object.book_edition }}</h5>
+			</div>
+		</div>
+	</div>
+
+	<div class="card detail-view-fields">
+		<div class="row">
+			<div class="col-sm">
+				<h5 class="mt-2 text-light">ISBN No</h5>
+			</div>
+			<div class="col-sm">
+				<h5 class="mt-2 text-light">{{ object.isbn_no }}</h5>
+			</div>
+		</div>
+	</div>
+
+	<div class="card detail-view-fields">
+		<div class="row">
+			<div class="col-sm">
+				<h5 class="mt-2 text-light">Price </h5>
+			</div>
+			<div class="col-sm">
+				<h5 class="mt-2 text-light">{{ object.price }}</h5>
+			</div>
+		</div>
+	</div>
+
+	<div class="card detail-view-fields">
+		<div class="row">
+			<div class="col-sm">
+				<h5 class="mt-2 text-light">Total Copies</h5>
+			</div>
+			<div class="col-sm">
+				<h5 class="mt-2 text-light">{{ object.total_copies }}</h5>
+			</div>
+		</div>
+	</div>
+
+	<div class="card detail-view-fields">
+		<div class="row">
+			<div class="col-sm">
+				<h5 class="mt-2 text-light">Available Copies</h5>
+			</div>
+			<div class="col-sm">
+				<h5 class="mt-2 text-light">{{ object.available_copies }}</h5>
+			</div>
+		</div>
+	</div>
+
+	<div class="card detail-view-fields">
+		<div class="row">
+			<div class="col-sm">
+				<h5 class="mt-2 text-light">Stack No</h5>
+			</div>
+			<div class="col-sm">
+				<h5 class="mt-2 text-light">{{ object.stack_no }}</h5>
+			</div>
+		</div>
+	</div>
+
+	<div class="card detail-view-fields">
+		<div class="row">
+			<div class="col-sm">
+				<h5 class="mt-2 text-light">Shelf No</h5>
+			</div>
+			<div class="col-sm">
+				<h5 class="mt-2 text-light">{{ object.shelf_no}}</h5>
+			</div>
+		</div>
+	</div>
+
+	<div class="card detail-view-fields">
+		<div class="row">
+			<div class="col-sm">
+				<h5 class="mt-2 text-light">Row No</h5>
+			</div>
+			<div class="col-sm">
+				<h5 class="mt-2 text-light">{{ object.row_no }}</h5>
+			</div>
+		</div>
+	</div>
+
+
+	<a class="btn btn-secondary" href="{% url 'book-update' object.id %}">Update Details</a>
+	<a class="btn btn-danger" href="{% url 'book-delete' object.id %}">Delete Book</a>
+
+</div>
+
+{% endblock content %}

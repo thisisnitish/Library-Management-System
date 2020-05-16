@@ -1,0 +1,21 @@
+{% extends "lms/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="section">
+    <form method="POST">   <!--{% url 'return-book' obj.pk %}-->
+        {% csrf_token %}
+        <fieldset class="form-group">
+
+            <div class="card mt-4 detail-view-header">
+                <h3 class="text-center mt-2 font-weight-bold" style="font-family: monospace; font-size: 25px;">Return
+                    Book here </h3>
+            </div>
+            {{ form|crispy }}
+        </fieldset>
+
+        <div class="form-group">
+            <button class="btn btn-outline-info" type="submit">Return Book</button>
+        </div>
+    </form>
+</div>
+{% endblock content %}

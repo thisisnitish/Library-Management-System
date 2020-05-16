@@ -1,0 +1,109 @@
+{% extends "lms/base.html" %}
+{% block content %}
+
+<!--SEARCH FORM-->
+<div class="container mt-4">
+	<form method="GET" action="{% url 'search-students' %}">
+		<div class="form-group row">
+			<div class="col-md-8">
+				<input class="form-control" type="search" aria-label="Search" name="query"
+					placeholder="Search Student by first name, last name, contact, year">
+			</div>
+			<div class="com-md-2">
+				<button class="btn btn-outline-info" type="submit">Search</button>
+			</div>
+		</div>
+	</form>
+</div>
+<div class="container text-center">
+	<h3 class="text-center mt-3 font-weight-bold d-inline" style="font-family: monospace; font-size: 25px;">
+		Students List
+	</h3>
+	<!-- Button trigger modal -->
+	<button type="button" class="btn btn-outline-info d-inline" data-toggle="modal" data-target="#tipmodal">
+		<i class="fas fa-lightbulb"></i>
+	</button>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="tipmodal" tabindex="-1" role="dialog" aria-labelledby="tipmodal" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-body">
+				<p class="text-info"><b>Tip</b>: Click on the student name to get the details about the student</p>
+				<button type="button" class="btn btn-outline-secondary" data-dismiss="modal">OK</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!--TABLE HEADER-->
+<div class="card mt-4 bg-dark text-white list-view-header">
+	<div class="row">
+		<div class="col-md-4  text-center">
+			<h4 class="mt-2 ml-3">Name</h4>
+		</div>
+		<div class="col-md-2  text-center">
+			<h5 class="mt-2">Branch</h5>
+		</div>
+		<div class="col-md-2  text-center">
+			<h5 class="mt-2">Year</h5>
+		</div>
+		<div class="col-md-2  text-center">
+			<h5 class="mt-2">Roll no</h5>
+		</div>
+		<div class="col-md-2  text-center">
+			<h5 class="mt-2">Issue Book</h5>
+		</div>
+	</div>
+</div>
+
+<!--TABLE ROWS-->
+{% for student in students %}
+<div class="card mt-4 font-weight-bold text-white list-view">
+	<div class="row">
+		<div class="col-md-4 text-center mt-2">
+			<p><a class="text-decoration-none text-white mt-2"
+					href="{% url 'student-detail' student.id %}">{{ student.first_name }} {{ student.last_name }}</a>
+			</p>
+		</div>
+		<div class="col-md-2  text-center">
+			<p class="mt-2">{{ student.department }}</p>
+		</div>
+		<div class="col-md-2  text-center">
+			<p class="mt-2">{{ student.year }} Year</p>
+		</div>
+		<div class="col-md-2  text-center">
+			<p class="mt-2">{{ student.roll_no }}</p>
+		</div>
+		<div class="col-md-2  text-center">
+			<a class="btn btn-secondary mt-2 mb-2" href="{% url 'issue-books' student.id %}">Issue</a>
+		</div>
+	</div>
+</div>
+{% endfor %}
+
+{% if is_paginated %}
+
+{% if page_obj.has_previous %}
+<a class="btn btn-outline-secondary mb-4" href="?page=1">First</a>
+<a class="btn btn-outline-secondary mb-4" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+{% endif %}
+
+{% for num in page_obj.paginator.page_range %}
+{% if page_obj.number == num %}
+<a class="btn btn-secondary mb-4" href="?page={{ num }}">{{ num }}</a>
+{% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+<a class="btn btn-outline-secondary mb-4" href="?page={{ num }}">{{ num }}</a>
+{% endif %}
+{% endfor %}
+
+{% if page_obj.has_next %}
+<a class="btn btn-outline-secondary mb-4" href="?page={{ page_obj.next_page_number }}">Next</a>
+<a class="btn btn-outline-secondary mb-4" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+{% endif %}
+
+{% endif %}
+
+{% endblock content %}

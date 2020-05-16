@@ -1,0 +1,107 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="icon" href="{% static 'lms/libraryicon.png' %}" type="image/png">
+
+	{% if title %}
+	<title>Library - {{ title }}</title>
+	{% else %}
+	<title>Library</title>
+	{% endif %}
+
+	<!--CSS-->
+	<style>
+		body {
+			background-image: url(static/lms/home.jpg);
+			background-position: center;
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+			background-size: cover;
+			background-color: #464646;
+		}
+
+		.introduction {
+			margin-top: 100px;
+			font-size: 35px;
+			font-family: 'Courier New', Courier, monospace;
+			margin-left: 30px;
+			font-weight: bolder;
+		}
+
+		.home-button {
+			margin-right: 80px;
+		}
+
+		@media only screen and (max-width: 767px) {
+			body {
+				background-image: url(static/lms/home.jpg);
+			}
+		}
+
+		@media only screen and (max-width: 767px) {
+
+			.introduction {
+				font-size: 25px;
+			}
+		}
+
+		@media only screen and (max-width: 767px) {
+
+			.home-button {
+				margin-right: 45px;
+			}
+		}
+	</style>
+
+</head>
+
+<!--Body-->
+
+<body>
+
+	<div class="container">
+		{% if messages %}
+			{% for message in messages %}
+				<div class="alert alert-{{ message.tags }} mt-3" role="alert">
+					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+					{{ message }}
+				</div>
+			{% endfor %}
+		{% endif %}
+	</div>
+
+
+	<div class="introduction text-white">
+		<p>
+			Welcome!!! to the book store...<br>
+			We carry almost all the books which is required for a person<br>
+			Hope you enjoy... go ahead
+		</p>
+	</div>
+
+	<div class="home-button text-right">
+		<a class="btn btn-success btn-lg" href="{% url 'login' %}">Login</a>
+		<a class="btn btn-light btn-lg ml-4" href="{% url 'register' %}">Register</a>
+	</div>
+
+
+
+	
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+		crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+		crossorigin="anonymous"></script>
+</body>
+
+</html>

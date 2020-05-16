@@ -1,0 +1,77 @@
+{% extends "lms/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+    <div class="section">
+	    <form method="POST">
+	        {% csrf_token %}
+	        <fieldset class="form-group">
+
+	        	<div class="card mt-4 detail-view-header">
+	        		<h3 class="text-center mt-2 font-weight-bold" style="font-family: monospace; font-size: 25px;">Add Book To the Library</h3>
+	            </div>
+	            <!--<legend class="border-bottom mb-4">Add Book</legend>!-->
+	            <!-- {{ form|crispy }} -->
+	            <div class="row">
+	            	<div class="col-md-6">
+	            		{{ form.book_name|as_crispy_field }}
+	            	</div>
+					<div class="col-md-6">
+	            		{{ form.author_name|as_crispy_field }}
+	            	</div>
+	            </div>
+
+	            <div class="row">
+	            	<div class="col-md-6">
+	            		{{ form.book_publisher|as_crispy_field }}
+	            	</div>
+					<div class="col-md-6">
+	            		{{ form.book_edition|as_crispy_field }}
+	            	</div>
+	            </div>
+
+	            <div class="row">
+	            	<div class="col-md-6">
+	            		{{ form.isbn_no|as_crispy_field }}
+	            	</div>
+	            	<div class="col-md-6">
+	            		{{ form.price|as_crispy_field }}
+	            	</div>
+	            </div>
+
+	            <div class="row">
+	            	<div class="col-md-6">
+	            		{{ form.total_copies|as_crispy_field }}
+	            	</div>
+	            	<div class="col-md-6">
+	            		{{ form.available_copies|as_crispy_field }}
+	            	</div>
+	            </div>
+
+	            <div class="row">
+	            	<div class="col-md-6">
+	            		{{ form.genre|as_crispy_field }}
+	            	</div>
+	            	<div class="col-md-6">
+	            		{{ form.stack_no|as_crispy_field }}
+	            	</div>
+	            </div>
+
+	            <div class="row">
+	            	<div class="col-md-6">
+	            		{{ form.shelf_no|as_crispy_field }}
+	            	</div>
+	            	<div class="col-md-6">
+	            		{{ form.row_no|as_crispy_field }}
+	            	</div>
+	            </div>		            
+
+	        </fieldset>
+	        
+	        <div class="form-group">
+	            <button class="btn btn-outline-info" type="submit">Add Book to the library</button>
+	        </div>
+	    </form>
+    </div>
+
+{% endblock content %}

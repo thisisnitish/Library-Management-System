@@ -1,0 +1,46 @@
+{% extends "lms/base.html" %}
+{% block content %}
+
+<h3 class="text-center mt-3 font-weight-bold" style="font-family: monospace; font-size: 25px;">
+    Returned Book and Transaction History
+</h3>
+
+<!--TABLE HEADER-->
+<div class="card mt-4 bg-dark text-white list-view-header">
+    <div class="row">
+        <div class="col-md-3  text-center">
+            <h4 class="mt-2 ml-3">Book</h4>
+        </div>
+        <div class="col-md-2  text-center">
+            <h5 class="mt-2">St. Name</h5>
+        </div>
+        <div class="col-md-2  text-center">
+            <h5 class="mt-2">Returned Date</h5>
+        </div>
+        <div class="col-md-3  text-center">
+            <h5 class="mt-2">Fine</h5>
+        </div>
+    </div>
+</div>
+
+<!--TABLE ROWS-->
+{% for return in returns %}
+<div class="card mt-4 font-weight-bold text-white list-view"
+    style="min-height: 50px; font-family: monospace; font-size: 15px; background-image: linear-gradient(#2193b0, #6dd5ed);">
+    <div class="row">
+        <div class="col-md-3 text-center mt-2">
+            <p><a class="text-decoration-none text-white mt-2">{{ return.book }}</a></p>
+        </div>
+        <div class="col-md-2  text-center mt-2">
+            <p><a class="text-decoration-none text-white mt-2">{{ return.student_name }}</a></p>
+        </div>
+        <div class="col-md-2  text-center mt-2">
+            <p><a class="text-decoration-none text-white mt-2">{{ return.actual_return_date }}</a></p>
+        </div>
+        <div class="col-md-2  text-center mt-2">
+            <p><a class="text-decoration-none text-white mt-2">{{ return.fine_amount }}</a></p>
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% endblock content %}

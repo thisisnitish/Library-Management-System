@@ -1,0 +1,30 @@
+/* css */
+
+.card{
+  margin: 0 auto;
+  float: none; 
+  margin-bottom: 10px; 
+}
+
+.list-view-header{
+  min-height: 50px; 
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.list-view{
+  min-height: 50px; 
+  font-family: monospace; 
+  font-size: 20px; 
+  background-image: linear-gradient(#2193b0, #6dd5ed);
+}
+
+.detail-view-header{
+  max-height: 7rem; 
+  background-image: linear-gradient(-45deg, #cc2b5e, #753a88);
+}
+
+.detail-view-fields{
+  max-width: 50rem; 
+  max-height: 7rem;
+  background-image: linear-gradient(-45deg, #42275a ,  #734b6d);
+}

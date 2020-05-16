@@ -1,0 +1,82 @@
+{% extends "lms/base.html" %}
+{% block content %}
+
+<h3 class="text-center mt-3 font-weight-bold" style="font-family: monospace; font-size: 25px;">
+    Currently Issued Books
+</h3>
+
+<!--TABLE HEADER-->
+<div class="card mt-4 bg-dark text-white list-view-header">
+    <div class="row">
+        <!--<div class="col-md-3  text-center">
+				<h4 class="mt-2 ml-3">ID</h4>
+			</div>-->
+        <div class="col-md-3  text-center">
+            <h4 class="mt-2 ml-3">Book</h4>
+        </div>
+        <div class="col-md-3  text-center">
+            <h5 class="mt-2">St. Name</h5>
+        </div>
+        <div class="col-md-3  text-center">
+            <h5 class="mt-2">Issued Date</h5>
+        </div>
+        <div class="col-md-3  text-center">
+            <h5 class="mt-2">Exp. Return Date</h5>
+        </div>
+        <!--<div class="col-md-2  text-center">
+            <h5 class="mt-2">Return</h5>
+        </div>-->
+    </div>
+</div>
+
+<!--TABLE ROWS-->
+{% for issue in issued %}
+<div class="card mt-4 font-weight-bold text-white"
+    style="min-height: 50px; font-family: monospace; font-size: 15px; background-image: linear-gradient(#2193b0, #6dd5ed);">
+    <div class="row">
+        <!--<div class="col-md-3 text-center mt-2">
+                <p><a class="text-decoration-none text-white mt-2" href="#">{{ issue.id }}</a></p>
+            </div>-->
+        <div class="col-md-3 text-center mt-2">
+            <p><a class="text-decoration-none text-white mt-2">{{ issue.book }}</a></p>
+        </div>
+        <div class="col-md-3  text-center mt-2">
+            <p><a class="text-decoration-none text-white mt-2">{{ issue.student_name }}</a></p>
+        </div>
+        <div class="col-md-3  text-center mt-2">
+            <p><a class="text-decoration-none text-white mt-2">{{ issue.issue_date }}</a></p>
+        </div>
+        <div class="col-md-3  text-center mt-2">
+            <p><a class="text-decoration-none text-white mt-2">{{ issue.expected_return_date }}</a></p>
+        </div>
+        <!--<div class="col-md-2  text-center mt-2">
+            <p><a class="text-decoration-none text-white mt-2" href="{% url 'return-book' issue.id %}">Return Here</a>
+            </p>
+        </div>-->
+    </div>
+</div>
+{% endfor %}
+
+{% if is_paginated %}
+
+{% if page_obj.has_previous %}
+<a class="btn btn-outline-secondary mb-4" href="?page=1">First</a>
+<a class="btn btn-outline-secondary mb-4" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+{% endif %}
+
+{% for num in page_obj.paginator.page_range %}
+{% if page_obj.number == num %}
+<a class="btn btn-secondary mb-4" href="?page={{ num }}">{{ num }}</a>
+{% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+<a class="btn btn-outline-secondary mb-4" href="?page={{ num }}">{{ num }}</a>
+{% endif %}
+{% endfor %}
+
+{% if page_obj.has_next %}
+<a class="btn btn-outline-secondary mb-4" href="?page={{ page_obj.next_page_number }}">Next</a>
+<a class="btn btn-outline-secondary mb-4" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+{% endif %}
+
+{% endif %}
+
+{% endblock content %}

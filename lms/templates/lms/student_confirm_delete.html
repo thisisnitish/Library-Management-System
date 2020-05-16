@@ -1,0 +1,28 @@
+{% extends "lms/base.html" %}
+
+{% block content %}
+
+    <div class="section">
+	    <form method="POST">
+	        {% csrf_token %}
+	        <fieldset class="form-group">
+
+	        	<div class="card mt-4 detail-view-header">
+	        		<h3 class="text-center mt-2 font-weight-bold" style="font-family: monospace; font-size: 25px;">Delete Student From the Library</h3>
+	            </div>
+	            <h3 style="font-family: monospace;">Are you sure you want to delete data of "{{ object.first_name }} {{ object.last_name }}" from library?</h3>
+
+	        </fieldset>
+	        
+	        <div class="form-group">
+	            <button class="btn btn-outline-danger" type="submit">
+	            	Delete
+	        	</button>
+	        	<a class="btn btn-outline-secondary ml-2" href="{% url 'student-detail' object.id %}">
+	            	Cancel
+	        	</a>
+	        </div>
+	    </form>
+    </div>
+
+{% endblock content %}

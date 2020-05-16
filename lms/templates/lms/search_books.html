@@ -1,0 +1,69 @@
+{% extends "lms/base.html" %}
+
+{% block content %}
+	<h3 class="font-weight-bold mt-4" style="font-family: monospace; font-size: 25px;">
+		Search Results:
+	</h3>
+
+	{% if books|length < 1 %}
+
+		<p>No Search Results</p>
+
+		Your search - <b>{{ query }}</b> - did not match in library.<br>
+
+		Suggestions:<br>
+		<ul>
+			<li>Search always by Book name, Genre, and Author</li>
+			<li>Try different keywords.</li>
+			<li>Try different book names</li>
+			<li>Try different genre</li>
+			<li>Try different Author</li>
+		</ul>
+
+	{% else %}
+
+		<div class="card mt-4 bg-dark text-white list-view-header">
+			<div class="row">
+				<div class="col-md-4  text-center">
+					<h4 class="mt-2 ml-3">Books</h4>
+				</div>
+				<div class="col-md-2  text-center">
+					<h5 class="mt-2">Author</h5>
+				</div>
+				<div class="col-md-2  text-center">
+					<h5 class="mt-2">Genre</h5>
+				</div>
+				<div class="col-md-2  text-center">
+					<h5 class="mt-2">Edition</h5>
+				</div>
+				<div class="col-md-2 text-center">
+					<h5 class="mt-2">Avl. Copies</h5>
+				</div>
+			</div>
+		</div>
+		  	{% for book in books %}
+			<div class="card mt-4 font-weight-bold text-white list-view">
+				<div class="row">
+					<div class="col-md-4 text-center mt-2">
+						<p><a class="text-decoration-none text-white mt-2" href="{% url 'book-detail' book.id %}">{{ book.book_name|truncatechars:26 }}</a></p>
+					</div>
+					<div class="col-md-2  text-center">
+						<p class="mt-2">{{ book.author_name|truncatewords:2 }}</p>
+					</div>
+					<div class="col-md-2  text-center">
+						<p class="mt-2">{{ book.genre|truncatechars:10 }}</p>
+					</div>
+					<div class="col-md-2  text-center">
+						<p class="mt-2">{{ book.book_edition }}</p>
+					</div>
+					<div class="col-md-2 text-center">
+						<p class="mt-2">{{ book.available_copies }}</p>
+					</div>
+				</div>
+			</div>
+		    {% endfor %}
+		  </tbody>
+		</table>
+
+	{% endif %}
+{% endblock content %}

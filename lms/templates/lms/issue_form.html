@@ -1,0 +1,42 @@
+{% extends "lms/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="section">
+    <form method="POST">
+        {% csrf_token %}
+        <fieldset class="form-group">
+
+            <div class="card mt-4 detail-view-header">
+                <h3 class="text-center mt-2 font-weight-bold" style="font-family: monospace; font-size: 25px;">Issue
+                    Book here for {{ fname }} {{ lname }} </h3>
+            </div>
+
+            <h6>Please select only {{ fname }} {{ lname }} <span>*</span></h6>
+
+            {{ form|crispy }}
+        </fieldset>
+
+        <div class="form-group">
+            <button class="btn btn-outline-info" type="submit">Issue Book</button>
+        </div>
+    </form>
+</div>
+
+<div class="container">
+    <h2 class="font-weight-bold">Rules:</h2>
+    <ul class="list-group">
+        <li class="list-group-item">
+            We are happy that you are taking the advantage of your library.
+        </li>
+        <li class="list-group-item">
+            Expected Return date for that issued book will be one month after the date of issue.
+        </li>
+        <li class="list-group-item">
+            If you are unable to return the book with in the expected return date, you will have to pay fine with 2 Rs.
+            per day.
+        </li>
+    </ul>
+</div>
+
+
+{% endblock content %}

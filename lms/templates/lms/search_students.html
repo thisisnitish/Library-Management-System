@@ -1,0 +1,70 @@
+{% extends "lms/base.html" %}
+
+{% block content %}
+
+    <h3 class="font-weight-bold mt-4" style="font-family: monospace; font-size: 25px;">
+        Search Results:
+    </h3>
+
+    {% if students|length < 1 %}
+
+		<p>No Search Results</p>
+
+		Your search - <b>{{ query }}</b> - did not match in library.<br>
+
+		Suggestions:<br>
+		<ul>
+			<li>Search always by First name, Last Name, and Year</li>
+			<li>Try different keywords.</li>
+			<li>Try different first names and last names</li>
+			<li>Try different roll no</li>
+			<li>Try different year such as I or II </li>
+		</ul>
+
+	{% else %}
+
+	<!--TABLE HEADER-->
+	<div class="card mt-4 bg-dark text-white list-view-header">
+		<div class="row">
+			<div class="col-md-4  text-center">
+				<h4 class="mt-2 ml-3">Name</h4>
+			</div>
+			<div class="col-md-2  text-center">
+				<h5 class="mt-2">Branch</h5>
+			</div>
+			<div class="col-md-2  text-center">
+				<h5 class="mt-2">Year</h5>
+			</div>
+			<div class="col-md-2  text-center">
+				<h5 class="mt-2">Roll no</h5>
+            </div>
+            <div class="col-md-2  text-center">
+				<h5 class="mt-2">Issue Book</h5>
+			</div>
+		</div>
+	</div>
+
+    <!--TABLE ROWS-->
+    {% for student in students %}
+    <div class="card mt-4 font-weight-bold text-white list-view">
+        <div class="row">
+            <div class="col-md-4 text-center mt-2">
+                <p><a class="text-decoration-none text-white mt-2" href="{% url 'student-detail' student.id %}">{{ student.first_name }} {{ student.last_name }}</a></p>
+            </div>
+            <div class="col-md-2  text-center">
+                <p class="mt-2">{{ student.department }}</p>
+            </div>
+            <div class="col-md-2  text-center">
+                <p class="mt-2">{{ student.year }} Year</p>
+            </div>
+            <div class="col-md-2  text-center">
+                <p class="mt-2">{{ student.roll_no }}</p>
+            </div>
+            <div class="col-md-2  text-center">
+                <a class="btn btn-secondary mt-2 mb-2" href="{% url 'issue-books' student.id %}">Issue</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    {% endif %}
+{% endblock content %}
