@@ -16,7 +16,7 @@ Find the source code here: https://github.com/thisisnitish/Library-Management-Sy
 
 <hr>
 <ul>
-    <li>UI built with: **Bootstrap4**<br></li>
+    <li>UI built with: <b>Bootstrap4</b><br></li>
     <li>Backend using: **Django**<br></li>   
     <li>DBMS: **PostgresSql**<br></li>
     <li>Deployed and Hosted on Heroku<br></li>
