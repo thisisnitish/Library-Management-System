@@ -11,24 +11,26 @@ Find the source code here: https://github.com/thisisnitish/Library-Management-Sy
     <li>Username: divinelibrary<br></li>
     <li>Password: divinelibrary1234<br></li>
 </ul>
-**OR**<br>
+<b>OR</b><br>
 ---You can also register and create your own register and login details---<br>
 
 <hr>
 <ul>
     <li>UI built with: <b>Bootstrap4</b><br></li>
-    <li>Backend using: **Django**<br></li>   
-    <li>DBMS: **PostgresSql**<br></li>
+    <li>Backend using: <b>Django</b><br></li>   
+    <li>DBMS: <b>PostgresSql</b><br></li>
     <li>Deployed and Hosted on Heroku<br></li>
 </ul>
 <hr>
 
 **Basic Features:**<br>
-Add Books<br>
-Add Students<br>
-Update the details of Books<br>
-Update the details of Students<br>
-Search Books using Name, Author Name, Genre<br>
-Search Students using First name, Last name, Contact, Year<br>
-Issue Books<br>
-Maintain Issued Books history<br>
+<ul>
+    <li>Add Books</li><br>
+    <li>Add Students</li><br>
+    <li>Update the details of Books</li><br>
+    <li>Update the details of Students</li<br>
+    <li>Search Books using Name, Author Name, Genre</li><br>
+    <li>Search Students using First name, Last name, Contact, Year</li<br>
+    <li>Issue Books</li><br>
+    <li>Maintain Issued Books history</li><br>
+</ul>
