@@ -16,21 +16,21 @@ Find the source code here: https://github.com/thisisnitish/Library-Management-Sy
 
 <hr>
 <ul>
-    <li>UI built with: <b>Bootstrap4</b><br></li>
-    <li>Backend using: <b>Django</b><br></li>   
-    <li>DBMS: <b>PostgresSql</b><br></li>
-    <li>Deployed and Hosted on Heroku<br></li>
+    <li>UI built with: <b>Bootstrap4</b></li>
+    <li>Backend using: <b>Django</b></li>   
+    <li>DBMS: <b>PostgresSql</b></li>
+    <li>Deployed and Hosted on Heroku</li>
 </ul>
 <hr>
 
 **Basic Features:**<br>
 <ul>
-    <li>Add Books</li><br>
-    <li>Add Students</li><br>
-    <li>Update the details of Books</li><br>
-    <li>Update the details of Students</li<br>
-    <li>Search Books using Name, Author Name, Genre</li><br>
-    <li>Search Students using First name, Last name, Contact, Year</li<br>
-    <li>Issue Books</li><br>
-    <li>Maintain Issued Books history</li><br>
+    <li>Add Books</li>
+    <li>Add Students</li>
+    <li>Update the details of Books</li>
+    <li>Update the details of Students</li
+    <li>Search Books using Name, Author Name, Genre</li>
+    <li>Search Students using First name, Last name, Contact, Year</li>
+    <li>Issue Books</li>
+    <li>Maintains Issued Books history</li>
 </ul>
