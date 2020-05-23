@@ -28,7 +28,7 @@ Find the source code here: https://github.com/thisisnitish/Library-Management-Sy
     <li>Add Books</li>
     <li>Add Students</li>
     <li>Update the details of Books</li>
-    <li>Update the details of Students</li
+    <li>Update the details of Students</li>
     <li>Search Books using Name, Author Name, Genre</li>
     <li>Search Students using First name, Last name, Contact, Year</li>
     <li>Issue Books</li>
