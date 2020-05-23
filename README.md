@@ -7,16 +7,20 @@ Find the source code here: https://github.com/thisisnitish/Library-Management-Sy
 
 
 **Login Details:**<br>
-Username: divinelibrary<br>
-Password: divinelibrary1234<br>
-OR<br>
+<ul>
+    <li>Username: divinelibrary<br></li>
+    <li>Password: divinelibrary1234<br></li>
+</ul>
+**OR**<br>
 ---You can also register and create your own register and login details---<br>
 
 <hr>
-UI built with: Bootstrap4<br>
-Backend using: Django<br>
-DBMS: PostgresSql<br>
-Deployed and Hosted on Heroku<br>
+<ul>
+    <li>UI built with: **Bootstrap4**<br></li>
+    <li>Backend using: **Django**<br></li>   
+    <li>DBMS: **PostgresSql**<br></li>
+    <li>Deployed and Hosted on Heroku<br></li>
+</ul>
 <hr>
 
 **Basic Features:**<br>
