@@ -9,7 +9,7 @@ Find the source code here: https://github.com/thisisnitish/Library-Management-Sy
 **Login Details:**<br>
 <ul>
     <li>Username: divinelibrary<br></li>
-    <li>Password: divinelibrary1234<br></li>
+    <li>Password: divinelibrary<br></li>
 </ul>
 <b>OR</b><br>
 ---You can also register and create your own register and login details---<br>
